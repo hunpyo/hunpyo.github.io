@@ -202,8 +202,9 @@ h3 {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--color-text-secondary);
-    padding: 0.5rem 0;
+    padding-bottom: 0.25rem;
     position: relative;
+    display: inline-block;
 }
 
 .nav-link:hover,
@@ -1022,12 +1023,24 @@ h3 {
         visibility: visible;
     }
 
+    .nav-menu li {
+        width: 100%;
+    }
+
     .nav-link {
         display: block;
         width: 100%;
         padding: 1rem 0;
         border-bottom: 1px solid var(--color-border);
         text-align: left;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-link.active {
+        color: var(--color-primary);
     }
 
     .nav-toggle {
