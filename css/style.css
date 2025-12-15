@@ -614,11 +614,10 @@ h3 {
 }
 
 .pub-item.featured {
-    background: linear-gradient(90deg, rgba(0, 122, 255, 0.03) 0%, transparent 100%);
+    background: linear-gradient(90deg, rgba(0, 122, 255, 0.05) 0%, transparent 100%);
     margin: 0 -1rem;
     padding: 1.5rem 1rem;
     border-radius: 8px;
-    border-bottom: none;
 }
 
 .pub-number {
