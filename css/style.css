@@ -100,8 +100,12 @@ h1 {
     letter-spacing: -0.02em;
 }
 
+h1.page-title {
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+}
+
 h2 {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     letter-spacing: -0.01em;
 }
 
@@ -256,33 +260,54 @@ h3 {
     text-align: center;
     padding: calc(var(--nav-height) + 60px) 24px 60px;
     background: var(--bg-section);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/images/hero/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 .hero-content {
     max-width: 900px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
     margin-bottom: 1.5rem;
     opacity: 0;
     transform: translateY(30px);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.5);
 }
 
 .hero-subtitle {
     font-size: clamp(1.125rem, 2vw, 1.5rem);
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     margin-bottom: 2rem;
     opacity: 0;
     transform: translateY(30px);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 .hero-description {
     font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    color: var(--color-text);
     max-width: 700px;
     margin: 0 auto 3rem;
     opacity: 0;
     transform: translateY(30px);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
 .hero-cta {
@@ -717,6 +742,7 @@ h3 {
 .cover-gallery {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 2rem;
     flex-wrap: wrap;
 }
@@ -726,10 +752,8 @@ h3 {
 }
 
 .cover-item img {
-    max-width: 280px;
-    max-height: 380px;
+    height: 380px;
     width: auto;
-    height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     transition: transform var(--transition-normal);
@@ -751,7 +775,7 @@ h3 {
  * ============================================ */
 .profile-card {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: auto 1fr;
     gap: 3rem;
     align-items: start;
     padding: 3rem;
@@ -761,17 +785,15 @@ h3 {
 }
 
 .profile-image {
-    width: 250px;
-    height: 250px;
+    height: 210px;
     border-radius: 16px;
     overflow: hidden;
     background: var(--bg-main);
 }
 
 .profile-image img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    width: auto;
 }
 
 .profile-info h1 {
